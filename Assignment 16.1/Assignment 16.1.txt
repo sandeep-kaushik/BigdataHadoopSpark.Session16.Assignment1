@@ -1,0 +1,42 @@
+
+						Assignment 16.1						
+
+val list1 =sc.parallelize(List(1,2,3,4,5,6,7,8,9,10));
+list1.collect();
+
+task1: ------------------------------------------------------------------
+(find the sum of all numbers)
+
+
+list1.reduce((a,b)=>(a+b));
+
+
+task2:------------------------------------------------------------------
+(find the total elements in the list)
+
+
+val ttlElement = list1.count();
+
+
+
+task3:-------------------------------------------------------------------
+(calculate the average of the numbers in the list)
+
+
+val sum = list1.reduce((a,b)=>(a+b));
+val avg :Float = sum / ttlElement ;
+
+
+
+task4:-------------------------------------------------------------------
+(find the sum of all the even numbers in the list)
+
+val even = list1.filter(x=>((x%2==0))).reduce((x,y)=>x+y);
+
+
+task5:-------------------------------------------------------------------
+(find the total number of elements in the list divisible by both 5 and 3)
+
+
+val even = list1.filter(x=>((x%5==0 && x%3==0))).count();
+
